@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    username: dm_management
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        #this is tell jpa to take table and column names in uppercase format
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        #this is tell jpa to include double quotes around table name names column names,
+        #this is useful when using sql keywords as column names like USER, INDEX
+        globally_quoted_identifiers: true
+
+logging:
+  level:
+    org.springframework.data: debug
+    sql: debug
+
